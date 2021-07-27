@@ -10,7 +10,7 @@ steps:
       SonarCloud: 'sonarcloud-connection'
       organization: 'my-demo-origination-1'
       scannerMode: 'Other'
-      sonar.exclusions=**/*.bin
+      sonar.exclusions: '**/*.bin'
     displayName: Preparing Connection between SonarCloud and Azure Pipeline
   
   - template: templates/build.yaml
