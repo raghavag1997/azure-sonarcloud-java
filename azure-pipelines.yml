@@ -10,8 +10,10 @@ steps:
       SonarCloud: 'sonarcloud-connection'
       organization: 'my-demo-origination-azure'
       scannerMode: 'CLI'
-      configMode: 'file'
-    displayName: Preparing Connection between SonarCloud and Azure Pipeline
+      configMode: 'manual'
+      cliProjectKey: 'my-demo-project'
+      cliSources: '.'
+      displayName: Preparing Connection between SonarCloud and Azure Pipeline
   
   - template: templates/build.yaml
     parameters:
@@ -24,6 +26,4 @@ steps:
     inputs:
       pollingTimeoutSec: '300'
     displayName: Sending the result
-
-
 
