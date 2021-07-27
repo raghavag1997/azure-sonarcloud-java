@@ -5,6 +5,25 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+  - task: SonarCloudPrepare@1
+    inputs:
+      SonarCloud: 'sonarcloud-connection'
+      organization: 'my-demo-origination-azure'
+      scannerMode: 'CLI'
+      configMode: 'file'
+    displayName: Preparing Connection between SonarCloud and Azure Pipeline
+  
   - template: templates/build.yaml
     parameters:
       buildConfiguration: "install"
+  
+  - task: SonarCloudAnalyze@1
+    displayName: Analysing the code
+  
+  - task: SonarCloudPublish@1
+    inputs:
+      pollingTimeoutSec: '300'
+    displayName: Sending the result
+
+
+
