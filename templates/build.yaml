@@ -1,0 +1,18 @@
+#Defining variables in templates
+
+parameters:
+    buildConfiguration: 'install'
+  
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: ${{ parameters.buildConfiguration }}
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+  displayName: 'Bulding the code'
