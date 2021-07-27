@@ -22,4 +22,9 @@ steps:
       pollingTimeoutSec: '300'
     displayName: Sending the result
 
+  - task: sonarcloud-buildbreaker@2
+    inputs:
+      SonarCloud: 'sonarcloud-connection'
+      organization: 'my-demo-origination-1'
+
 
