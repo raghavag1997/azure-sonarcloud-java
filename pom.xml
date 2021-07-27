@@ -22,6 +22,12 @@
     </dependencies>
 
     <properties>
+        <sonar.projectKey>my-demo-project</sonar.projectKey>
+        <sonar.organization>my-demo-origination-1</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
+
+    <properties>
         <java.version>1.8</java.version>
     </properties>
 
