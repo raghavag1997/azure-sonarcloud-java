@@ -8,8 +8,9 @@ steps:
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'sonarcloud-connection'
-      organization: 'my-demo-origination-azure'
+      organization: 'my-demo-origination-1'
       scannerMode: 'Other'
+      sonar.exclusions=**/*.bin
     displayName: Preparing Connection between SonarCloud and Azure Pipeline
   
   - template: templates/build.yaml
@@ -20,4 +21,5 @@ steps:
     inputs:
       pollingTimeoutSec: '300'
     displayName: Sending the result
+
 
