@@ -9,11 +9,8 @@ steps:
     inputs:
       SonarCloud: 'sonarcloud-connection'
       organization: 'my-demo-origination-azure'
-      scannerMode: 'CLI'
-      configMode: 'manual'
-      cliProjectKey: 'my-demo-project'
-      cliSources: '.'
-      displayName: Preparing Connection between SonarCloud and Azure Pipeline
+      scannerMode: 'Other'
+    displayName: Preparing Connection between SonarCloud and Azure Pipeline
   
   - template: templates/build.yaml
     parameters:
